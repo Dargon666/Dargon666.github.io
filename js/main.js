@@ -44,8 +44,11 @@ function addMultipliers() {
             task.xpMultipliers.push(getBindedTaskEffect("Evil Incarnate"))
             task.xpMultipliers.push(getBindedTaskEffect("Dark Prince"))
         }
-
-        if (jobCategories["Military"].includes(task.name)) {
+        if (jobCategories["Common work"].includes(task.name)) {
+            task.incomeMultipliers.push(getBindedTaskEffect("Business"))
+            task.xpMultipliers.push(getBindedTaskEffect("Management"))
+            task.xpMultipliers.push(getBindedItemEffect("Ledger"))
+        } else if (jobCategories["Military"].includes(task.name)) {
             task.incomeMultipliers.push(getBindedTaskEffect("Strength"))
             task.xpMultipliers.push(getBindedTaskEffect("Battle Tactics"))
             task.xpMultipliers.push(getBindedItemEffect("Steel Longsword"))

@@ -153,7 +153,7 @@ const jobBaseData = {
     "Merchant Assistant": { name: "Merchant Assistant", maxXp: 2400, income: 300, heroxp: 43 },
     "Merchant": { name: "Merchant", maxXp: 6000, income: 1000, heroxp: 44 },
     "Lesser Noble": { name: "Lesser Noble", maxXp: 12000, income: 5000, heroxp: 45 },
-    "Noble": { name: "Lesser Noble", maxXp: 24000, income: 10000, heroxp: 46 },
+    "Noble": { name: "Noble", maxXp: 24000, income: 10000, heroxp: 46 },
 
     "Squire": { name: "Squire", maxXp: 42, income: 5, heroxp: 51 },
     "Footman": { name: "Footman", maxXp: 1000, income: 50, heroxp: 52 },

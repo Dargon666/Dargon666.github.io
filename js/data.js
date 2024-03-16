@@ -1,4 +1,4 @@
-﻿var gameData = {
+var gameData = {
     taskData: {},
     itemData: {},
 
@@ -149,7 +149,11 @@ const jobBaseData = {
     "Fisherman": { name: "Fisherman", maxXp: 200, income: 15, heroxp: 38 },
     "Miner": { name: "Miner", maxXp: 400, income: 40, heroxp: 39 },
     "Blacksmith": { name: "Blacksmith", maxXp: 800, income: 80, heroxp: 40 },
-    "Merchant": { name: "Merchant", maxXp: 1600, income: 150, heroxp: 41 },
+    "Armorsmith": { name: "Armorsmith", maxXp: 1600, income: 150, heroxp: 41 },
+    "Merchant Assistant": { name: "Merchant Assistant", maxXp: 2400, income: 300, heroxp: 43 },
+    "Merchant": { name: "Merchant", maxXp: 6000, income: 1000, heroxp: 44 },
+    "Lesser Noble": { name: "Lesser Noble", maxXp: 12000, income: 5000, heroxp: 45 },
+    "Noble": { name: "Lesser Noble", maxXp: 24000, income: 10000, heroxp: 46 },
 
     "Squire": { name: "Squire", maxXp: 42, income: 5, heroxp: 51 },
     "Footman": { name: "Footman", maxXp: 1000, income: 50, heroxp: 52 },
@@ -355,8 +359,12 @@ const requirementsBaseData = {
     "Fisherman": new TaskRequirement([getQuerySelector("Fisherman")], [{ task: "Farmer", requirement: 10 }]),
     "Miner": new TaskRequirement([getQuerySelector("Miner")], [{ task: "Strength", requirement: 10 }, { task: "Fisherman", requirement: 10 }]),
     "Blacksmith": new TaskRequirement([getQuerySelector("Blacksmith")], [{ task: "Strength", requirement: 30 }, { task: "Miner", requirement: 10 }]),
-    "Merchant": new TaskRequirement([getQuerySelector("Merchant")], [{ task: "Bargaining", requirement: 50 }, { task: "Blacksmith", requirement: 10 }]),
-
+    "Armorsmith": new TaskRequirement([getQuerySelector("Armorsmith")], [{ task: "Strength", requirement: 50 }, { task: "Concentration", requirement: 50 }, { task: "Blacksmith", requirement: 10 }]),
+    "Merchant Assistant": new TaskRequirement([getQuerySelector("Merchant Assistant")], [{ task: "Bargaining", requirement: 80 }, { task: "Armorsmith", requirement: 10 }]),
+    "Merchant": new TaskRequirement([getQuerySelector("Merchant")], [{ task: "Bargaining", requirement: 100 }, { task: "Merchant Assistant", requirement: 10 }]),
+    "Lesser Noble": new TaskRequirement([getQuerySelector("Lesser Noble")], [{ task: "Bargaining", requirement: 150 }, { task: "Merchant", requirement: 10 }]),
+    "Noble": new TaskRequirement([getQuerySelector(" Noble")], [{ task: "Bargaining", requirement: 200 }, { task: "Lesser Noble", requirement: 10 }]),
+    
     // Military
     "Squire": new TaskRequirement([getQuerySelector("Squire")], [{ task: "Strength", requirement: 5 }]),
     "Footman": new TaskRequirement([getQuerySelector("Footman")], [{ task: "Strength", requirement: 20 }, { task: "Squire", requirement: 10 }]),
@@ -568,7 +576,7 @@ const requirementsBaseData = {
 }
 
 const jobCategories = {
-    "Common work": ["Beggar", "Farmer", "Fisherman", "Miner", "Blacksmith", "Merchant"],
+    "Common work": ["Beggar", "Farmer", "Fisherman", "Miner", "Blacksmith", "Armorsmith", "Merchant Assistant", "Merchant", "Lesser Noble", "Noble"],
     "Military": ["Squire", "Footman", "Veteran footman", "Centenary", "Knight", "Veteran Knight", "Holy Knight", "Lieutenant General"],
     "The Arcane Association": ["Student", "Apprentice Mage", "Adept Mage", "Master Wizard", "Archmage", "Chronomancer", "Chairman", "Imperator"],
     "The Void": ["Corrupted", "Void Slave", "Void Fiend", "Abyss Anomaly", "Void Wraith", "Void Reaver", "Void Lord", "Abyss God"],
